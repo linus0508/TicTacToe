@@ -1,0 +1,15 @@
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/bin/Debug/net9.0/TicTacToe
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/bin/Debug/net9.0/TicTacToe.deps.json
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/bin/Debug/net9.0/TicTacToe.runtimeconfig.json
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/bin/Debug/net9.0/TicTacToe.dll
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/bin/Debug/net9.0/TicTacToe.pdb
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.GeneratedMSBuildEditorConfig.editorconfig
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.AssemblyInfoInputs.cache
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.AssemblyInfo.cs
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.csproj.CoreCompileInputs.cache
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.sourcelink.json
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.dll
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/refint/TicTacToe.dll
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.pdb
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/TicTacToe.genruntimeconfig.cache
+/Users/linushermann/Documents/GitHub/TicTacToe/TicTacToe/obj/Debug/net9.0/ref/TicTacToe.dll

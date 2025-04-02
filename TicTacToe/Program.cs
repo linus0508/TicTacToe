@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-public class TicTacToe
+public class Program
 {
     static void Main(string[] args)
     {

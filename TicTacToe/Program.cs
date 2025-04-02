@@ -26,6 +26,11 @@ public class TicTacToe
                 game = false; //Wenn ja, Spiel beenden
                 break;
             }
+            if (isFull(feld) == true) {
+                Console.WriteLine("Unentschieden!");
+                game = false;
+                break;
+            }
             //Spieler tauschen
             if (player == "a") {player = "b";}
             else {player = "a";}
@@ -108,5 +113,15 @@ public class TicTacToe
         
             return false;
         }
+
+        //Spielfeld voll ohne Gewinner?
+        static bool isFull(string[,] feld)
+        {
+            foreach (var feldwert in feld)
+            {
+                if (feldwert == " ") return false;
+            }
+            return true;
+        } 
     }
 }

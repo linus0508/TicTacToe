@@ -15,12 +15,18 @@ public class TicTacToe
         string player = "a";
         bool game = true;
 
+
         //Spielablauf
-        Console.WriteLine("Spieler " + player + " ist dran. Das ist der aktuelle Stand:");
         while (game == true) {
+            Console.WriteLine("Spieler " + player + " ist dran. Das ist der aktuelle Stand:");
             printFeld(feld); //Feld ausgeben
-            input(feld, player); //Spieler zug machen lassen
-            printFeld(feld); //Feld ausgeben
+            
+            if (player == "a") {
+                input(feld, player); //Spieler zug machen lassen
+                printFeld(feld);} //Feld ausgeben
+
+            else if (player == "b") {machine(feld);} //PC Zug mnachen lassen
+
             if (checkWin(feld) == true) { //Prüfen, ob es einen Gewinner gibt
                 Console.WriteLine("Herzlichen Glückwunsch Spieler " + player + ". Du hast gewonnen!");
                 game = false; //Wenn ja, Spiel beenden
@@ -31,12 +37,7 @@ public class TicTacToe
                 game = false;
                 break;
             }
-            //Spieler tauschen
-            if (player == "a") {player = "b";}
-            else {player = "a";}
-            //Nächster Spieler dran
-            Console.WriteLine("");
-            Console.WriteLine("Spieler " + player + " ist dran. Das ist der aktuelle Stand:");
+            
         }
 
         //Spielfeld ausgeben
@@ -51,6 +52,18 @@ public class TicTacToe
             Console.WriteLine("");
             Console.WriteLine("-------------");
         }
+        }
+        
+        static void machine(string[,] feld) {
+            var rand = new Random();
+            int x = rand.Next(1,3);
+            int y = rand.Next(1,3);
+
+            if (feld[x -1,y -1] == " ") { //Nur wenn Feld leer
+                        feld[x -1,y -1] = "O";}
+                    else {
+                        machine(feld);
+                    }
         }
 
         //Eingaben des Spielers
@@ -69,22 +82,11 @@ public class TicTacToe
                 yWahl = wahl%10;
 
                 //Platziere für Spieler A
-                if (spieler == "a") {
-                    if (feld[xWahl -1,yWahl -1] == " ") { //Nur wenn Feld leer
-                        feld[xWahl -1,yWahl -1] = "X";}
-                    else {
-                        Console.WriteLine("Hier ist kein Platz. Bitte versuche es erneut!");
-                        input(feld, spieler);
-                    }
-                }
-                //Platziere für Spieler B
-                else if (spieler == "b") {
-                    if (feld[xWahl -1,yWahl -1] == " ") { //Nur wenn Feld leer
-                        feld[xWahl -1,yWahl -1] = "O";}
-                    else {
-                        Console.WriteLine("Hier ist kein Platz. Bitte versuche es erneut!");
-                        input(feld, spieler);
-                    }
+                if (feld[xWahl -1,yWahl -1] == " ") { //Nur wenn Feld leer
+                    feld[xWahl -1,yWahl -1] = "X";}
+                else {
+                    Console.WriteLine("Hier ist kein Platz. Bitte versuche es erneut!");
+                    input(feld, spieler);
                 }
             }
 

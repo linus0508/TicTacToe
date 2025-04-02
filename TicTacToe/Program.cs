@@ -12,23 +12,27 @@ public class TicTacToe
         string[,] feld = { {" ", " ", " "}, {" ", " ", " "}, {" ", " ", " "} }; //Leeres Array für Feld
 
         //Startvariablen
-        string player = "a";
+        string player = "Mensch";
         bool game = true;
 
 
         //Spielablauf
         while (game == true) {
-            Console.WriteLine("Spieler " + player + " ist dran. Das ist der aktuelle Stand:");
-            printFeld(feld); //Feld ausgeben
-            
-            if (player == "a") {
+            if (player == "Mensch") {
+                Console.WriteLine(player + " ist dran. Das ist der aktuelle Stand:");
+                printFeld(feld); //Feld ausgeben
                 input(feld, player); //Spieler zug machen lassen
-                printFeld(feld);} //Feld ausgeben
+                printFeld(feld); //Feld ausgeben
+            }
 
-            else if (player == "b") {machine(feld);} //PC Zug mnachen lassen
+            else if (player == "Maschine") {
+                Console.WriteLine("Der PC hat gespielt!");
+                machine(feld); //PC Zug machen lassen
+                printFeld(feld); //Feld ausgeben
+            }
 
             if (checkWin(feld) == true) { //Prüfen, ob es einen Gewinner gibt
-                Console.WriteLine("Herzlichen Glückwunsch Spieler " + player + ". Du hast gewonnen!");
+                Console.WriteLine("Herzlichen Glückwunsch " + player + ". Du hast gewonnen!");
                 game = false; //Wenn ja, Spiel beenden
                 break;
             }
@@ -37,6 +41,9 @@ public class TicTacToe
                 game = false;
                 break;
             }
+
+            if (player == "Mensch") {player = "Maschine";}
+            else {player = "Mensch";}
             
         }
 
@@ -56,15 +63,19 @@ public class TicTacToe
         
         static void machine(string[,] feld) {
             var rand = new Random();
-            int x = rand.Next(1,3);
-            int y = rand.Next(1,3);
+            int x;
+            int y;
 
-            if (feld[x -1,y -1] == " ") { //Nur wenn Feld leer
-                        feld[x -1,y -1] = "O";}
-                    else {
-                        machine(feld);
-                    }
-        }
+            // So lange wiederholen, bis ein freies Feld gefunden wurde
+            do {
+                x = rand.Next(0, 3);
+                y = rand.Next(0, 3);
+            } 
+            while (feld[x, y] != " ");
+
+            feld[x, y] = "O"; // Setzt die Figur
+}
+
 
         //Eingaben des Spielers
         static void input(string[,] feld, string spieler) {

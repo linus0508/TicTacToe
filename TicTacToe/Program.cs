@@ -61,6 +61,7 @@ public class Program
         }
         }
         
+        //Zug des PCs
         static void machine(string[,] feld) {
             var rand = new Random();
             int x;
@@ -130,9 +131,9 @@ public class Program
         //Spielfeld voll ohne Gewinner?
         static bool isFull(string[,] feld)
         {
-            foreach (var feldwert in feld)
+            foreach (var feldwert in feld) //Prüfe jedes Feld
             {
-                if (feldwert == " ") return false;
+                if (feldwert == " ") return false; //Wenn es ein leeres Feld gibt, ist das Feld nicht voll
             }
             return true;
         } 

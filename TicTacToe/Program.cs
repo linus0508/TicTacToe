@@ -17,7 +17,7 @@ public class Program
 
 
         //Spielablauf
-        while (game == true) {
+        while (game) {
             if (player == "Mensch") {
                 Console.WriteLine(player + " ist dran. Das ist der aktuelle Stand:");
                 printFeld(feld); //Feld ausgeben
@@ -73,7 +73,7 @@ public class Program
             } 
             while (feld[x, y] != " ");
 
-            feld[x, y] = "O"; // Setzt die Figur
+            feld[x, y] = "C"; // Setzt die Figur
 }
 
 

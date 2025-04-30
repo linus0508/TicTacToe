@@ -58,7 +58,7 @@ public class Program
             }
             Console.WriteLine("");
             Console.WriteLine("-------------");
-        }
+            }
         }
         
         //Zug des PCs
@@ -75,7 +75,7 @@ public class Program
             while (feld[x, y] != " ");
 
             feld[x, y] = "C"; // Setzt die Figur
-}
+        }
 
 
         //Eingaben des Spielers

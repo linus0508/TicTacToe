@@ -15,20 +15,23 @@ public class Program
         string player = "Mensch";
         bool game = true;
 
-
+        Console.Clear();
+        willkommen();
         //Spielablauf
         while (game) {
             if (player == "Mensch") {
+                Console.Clear();
                 Console.WriteLine(player + " ist dran. Das ist der aktuelle Stand:");
                 printFeld(feld); //Feld ausgeben
                 input(feld, player); //Spieler zug machen lassen
-                printFeld(feld); //Feld ausgeben
+                //printFeld(feld); //Feld ausgeben
             }
 
             else if (player == "Maschine") {
                 Console.WriteLine("Der PC hat gespielt!");
                 machine(feld); //PC Zug machen lassen
-                printFeld(feld); //Feld ausgeben
+                //printFeld(feld); //Feld ausgeben
+                Thread.Sleep(1000);
             }
 
             if (checkWin(feld) == true) { //Prüfen, ob es einen Gewinner gibt
@@ -137,5 +140,22 @@ public class Program
             }
             return true;
         } 
+
+        static void willkommen() 
+        {
+            Console.WriteLine("Herzlich Willkommen! Das Spiel kann gleich loslegen!");
+            Thread.Sleep(800);
+            Console.WriteLine("Du spielst gegen einen Computer und fängst gleich an.");
+            Thread.Sleep(800);
+            Console.WriteLine("Zur Eingabe: Du kannst dein Kreuz Platzieren, indem du eine zweistellige Zahl eingibst.");
+            Thread.Sleep(800);
+            Console.WriteLine("Die erste Zahl indiziert die Y-Koordinate, die Zweite die X-Koordienate.");
+            Thread.Sleep(800);
+            Console.WriteLine("Beispiel: 13 ist das rechte Feld in der oberen Reihe.");
+            Thread.Sleep(800);
+            Console.WriteLine("Bereit? Drücke Enter!");
+            Console.ReadLine();
+            Thread.Sleep(500);
+        }
     }
 }

@@ -93,8 +93,9 @@ public class Program
 
             //Nimmt zweistellige Zahlen an
             Console.Write("Wo möchtest du dein Zeichen platzieren? ");
-            wahl = Convert.ToInt32(Console.ReadLine());
-
+            try {wahl = Convert.ToInt32(Console.ReadLine());}
+            catch {Console.WriteLine("Was war das?!");}
+            
             //Teilt zwei Stellige zahlen in beide Ziffern
             if (wahl > 10 && wahl <= 13 || wahl > 20 && wahl <= 23 || wahl > 30 && wahl <= 33) {
                 xWahl = wahl/10;

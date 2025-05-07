@@ -35,6 +35,10 @@ public class Program
             }
 
             if (checkWin(feld) == true) { //Prüfen, ob es einen Gewinner gibt
+                if (player == "Maschine") {
+                    Console.Clear();
+                    printFeld(feld);
+                }
                 Console.WriteLine("Herzlichen Glückwunsch " + player + ". Du hast gewonnen!");
                 game = false; //Wenn ja, Spiel beenden
                 break;
